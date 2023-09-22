@@ -1,0 +1,107 @@
+import java.util.*;
+//47 = secret weapon
+class Main {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    int ans = 1;
+
+    int wins = 0;
+    int losses = 0;
+    int ties = 0;
+    while(ans == 1) {
+    
+    System.out.println("Enter a number between 1 and 3 (1=rock, 2=paper, 3=scissors):");
+
+    int usrInput = scan.nextInt();
+
+      while(usrInput != 1 && usrInput != 2 && usrInput != 3 && usrInput!= 47) {
+
+        System.out.println("Please enter a number between 1 and 3");
+
+        usrInput = scan.nextInt();
+        
+      }
+
+    int cpuInput = (int) (Math.random()*3 + 1);
+
+    
+      
+    if(usrInput == 47){
+      System.out.println("You played the magic weapon pew pew 47 and automatically ;) win!");
+      wins++;
+    }
+      else{
+    
+    if (cpuInput == 1) {
+      
+        System.out.println("Computer chose rock.");
+      
+    } else if (cpuInput == 2) {
+      
+          System.out.println("Computer chose paper.");
+      
+      } else if (cpuInput == 3) {
+
+            System.out.println("Computer chose scissors.");
+      
+         }
+
+
+    
+    if (usrInput == cpuInput) {
+      
+        System.out.println("Tie");
+
+      ties++;
+      
+    } else if (usrInput == 1 && cpuInput == 2) {
+
+          System.out.println("Computer Wins, You Lose!");
+
+      losses++;
+      
+      } else if (usrInput == 1 && cpuInput == 3) {
+
+              System.out.println("Computer Lost, You Win!");
+
+      wins++;
+      
+        } else if (usrInput == 2 && cpuInput == 1) {
+
+                System.out.println("Computer Lost, You Win!");
+
+      wins++;
+      
+          } else if (usrInput == 2 && cpuInput == 3) {
+
+                  System.out.println("Computer Wins, You Lose!");
+
+      losses++;
+      
+            } else if (usrInput == 3 && cpuInput == 1) {
+
+                   System.out.println("Computer Wins, You Lose!");
+
+      losses++;
+      
+              } else if (usrInput == 3 && cpuInput == 2) {
+
+                      System.out.println("Computer Lost, You Win!");
+
+      wins++;
+      
+               }
+    }
+     
+  System.out.println("Do you want to play again? (1/2)");
+ans = scan.nextInt();
+
+      while(ans !=1 && ans != 2) {
+        System.out.println("Please enter a 1 for yes or a 2 for no.");
+      }
+    
+    }
+     System.out.println("You won " + wins + " time(s), lost " + losses + " time(s), and tied " + ties + " time(s).");
+    System.out.println("Have a good day!");
+  }
+}
