@@ -98,6 +98,7 @@ ans = scan.nextInt();
 
       while(ans !=1 && ans != 2) {
         System.out.println("Please enter a 1 for yes or a 2 for no.");
+        ans = scan.nextInt();
       }
     
     }
